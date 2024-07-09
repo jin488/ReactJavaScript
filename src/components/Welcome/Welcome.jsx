@@ -6,6 +6,9 @@ const Welcome = ({data}) => {
             <h2 className="text">
                 {data}
             </h2>
+
+            <a href="https://jin488.github.io/ReactJavaScript/" className="entrega">GitHub</a>
+            <a href="https://github.com/jin488/ReactJavaScript" className="entrega">GitHub arch</a>
         </div>
     )    
 }

@@ -1,24 +1,20 @@
 import './App.css'
-import Titulo from "./components/Titulo"
+import Welcome from "./components/Welcome/Welcome"
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
 
-  const saludo = "hola"
-
-
-
   return (
+    <nav>
+      <div>
+        <NavBar/>
+        
+      </div>
 
-    <div style={{
-      backgroundColor: "gray",
-      color: "lime"
-    }}>
-      <h1 className='titulo' >{saludo}</h1>
-      <Titulo />
-      <Titulo />
-      <Titulo />
-      <Titulo />
-    </div>
+      <div>
+        <Welcome data = "Welcome to my page"/>
+      </div>
+    </nav>
   )
 }
 

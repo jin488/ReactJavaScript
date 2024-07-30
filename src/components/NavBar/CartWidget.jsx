@@ -1,6 +1,6 @@
 import React from 'react'
 import { TiShoppingCart } from "react-icons/ti";
-import "./NavBar.css"
+import "./navbar.css"
 
 const CartWidget = () => {
     return (

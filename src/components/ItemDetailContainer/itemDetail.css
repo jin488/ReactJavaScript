@@ -1,0 +1,29 @@
+.item-detail {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    padding: 50px 0;
+}
+
+.item-detail .image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.item-detail .image img {
+    height: 70vh;
+}
+
+.item-detail .detail {
+    width: 50%;
+    margin: 0 50px;
+}
+
+.item-detail .detail h2 {
+    font-size: 40px;
+}
+
+.item-detail .detail p {
+    font-size: 20px;
+}

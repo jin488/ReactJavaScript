@@ -12,7 +12,7 @@ const Item = ({ producto }) => {
                     <p>Quantity: {producto.stock}</p>
                     <Link to={"/category/" + producto.category}>View more</Link>
                 </div>
-                <div className="boxCountStyle">
+                <div>
                     <EjemploContador/>
                 </div>
             </div>

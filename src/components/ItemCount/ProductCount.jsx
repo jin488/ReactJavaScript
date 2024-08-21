@@ -1,16 +1,12 @@
 import { useState } from "react";
-import Contador from "./Count";
-import Titulo from "./Title";
+import { TiShoppingCart } from "react-icons/ti";
+import "./count.css"
 
-const EjemploContador = ({ stock }) => {
+const EjemploContador = ({ agregarAlCarrito, stock }) => {
     const [contador, setContador] = useState(1);
-    const [toggle, setToggle] = useState(true);
-
-
 
     const aumentarContador = () => {
-        //contador = contador + 1
-        if (contador < stock.stock) {
+        if (contador < stock) {
             setContador(contador + 1);
         }
     };
@@ -21,22 +17,16 @@ const EjemploContador = ({ stock }) => {
         }
     };
 
-    const cambiarValorToggle = () => {
-        setToggle(!toggle)
-    }
-
     return (
-        <div>
-            <Contador
-                contador={contador}
-                aumentarContador={aumentarContador}
-                disminuirContador={disminuirContador}
-            />
+        <div className="boxCount">
+            <button className="btnCount" onClick={aumentarContador} >+</button>
+            <p className="numberCount"> {contador} </p>
+            <button className="btnCount" onClick={disminuirContador}>-</button>
 
-            {
-                toggle && <Titulo/>
-            }
-        </div>
+            <button className="btnAdd" onClick={() => agregarAlCarrito(contador)}>
+            <TiShoppingCart size={22} className='cart'/>
+            </button>
+        </div> 
     );
 };
 export default EjemploContador;

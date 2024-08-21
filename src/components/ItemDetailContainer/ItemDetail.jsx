@@ -1,6 +1,17 @@
 import "./itemDetail.css";
+import ProductCount from "../ItemCount/ProductCount"
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext"
 
 const ItemDetail = ({ producto }) => {
+    const { agregarProducto } = useContext(CartContext)
+
+    const agregarAlCarrito = (contador) => {
+        const productoCarrito = { ...producto, cantidad: contador};
+
+        agregarProducto(productoCarrito)
+    };         
+
     return (
         <div className="item-detail">
             <div className="image">
@@ -10,7 +21,8 @@ const ItemDetail = ({ producto }) => {
                 <h2>{producto.nombre}</h2>
                 <p>{producto.descripcion}</p>
                 <p>Price: ${producto.precio}</p>
-            </div>
+                <ProductCount stock={producto.stock} agregarAlCarrito={agregarAlCarrito}/>           
+                </div>
         </div>
     );
 };

@@ -1,15 +1,20 @@
 import { Link } from "react-router-dom";
-
+import EjemploContador from "../ItemCount/ProductCount";
 
 const Item = ({ producto }) => {
     return (
         <div className="item">
-            <img src={producto.image} width={200} alt="" />
-            <div className="description-item">
-                <p>{producto.nombre}</p>
-                <p>precio: ${producto.price}</p>
-
-                <Link to={"/category/" + producto.category}>View more</Link>
+            <p className="titleProducts" >{producto.name}</p>
+            <img src={producto.image} className="imageProducts" alt="" />
+            <div className="orderBox">
+                <div className="description-item">
+                    <p>Price: ${producto.price}</p>
+                    <p>Quantity: {producto.stock}</p>
+                    <Link to={"/category/" + producto.category}>View more</Link>
+                </div>
+                <div className="boxCountStyle">
+                    <EjemploContador/>
+                </div>
             </div>
         </div>
     );

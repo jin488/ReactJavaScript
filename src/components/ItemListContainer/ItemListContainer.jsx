@@ -32,8 +32,7 @@ useEffect(() => {
 
 
 return (
-    <div>
-        <p>{saludo}</p>
+    <div className="bodyProducts">
         <ItemList productos={products} />
     </div>
 )

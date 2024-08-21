@@ -1,0 +1,68 @@
+.boxCount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    padding: 12px;
+    padding-bottom: none;
+    margin-bottom: none;
+    gap: 15px;
+}
+
+.boxCount:hover {
+    outline: 1px solid black;
+    border-radius: 15px 15px 0px 0px ;
+    cursor: pointer;
+}
+
+.btnCount {
+    display: inline;
+    width: 30px;
+    background-color: rgb(167, 10, 167);
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.btnCount:hover {
+    color: rgb(110, 4, 110);
+    background-color: white;
+}
+
+
+
+.numberCount {
+    display: inline;
+    width: auto;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.boxBtnAdd {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 13px;
+    padding-top: none;
+    margin-top: none;
+    border-top: none;
+}
+
+.boxCountStyle:hover .boxBtnAdd:hover {
+    outline: 1px solid black;
+    border-radius: 0px 0px 15px 15px;
+    cursor: pointer;
+    transition: 0.5;
+}
+
+.btnAdd {
+    background-color: rgb(167, 10, 167);
+    border: none;
+    color: white;
+    padding: 3px;
+    cursor: pointer;
+    width: 50px;
+    border-radius: 5px;
+}

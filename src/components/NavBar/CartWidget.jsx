@@ -5,7 +5,7 @@ import "./navbar.css"
 const CartWidget = () => {
     return (
         <div className="cartNumber">
-            <TiShoppingCart size={30} className='cart'/>
+            <TiShoppingCart size={40} className='cart'/>
             <p>1</p>
         </div>
     )

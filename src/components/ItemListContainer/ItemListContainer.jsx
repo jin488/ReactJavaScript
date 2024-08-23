@@ -1,41 +1,53 @@
 import { useState, useEffect } from "react";
-import catchProducts from "../../data/data.js"
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { BarLoader } from "react-spinners";
+import { getDocs, collection, query, where } from "firebase/firestore";
+import db from "../../db/db";
 
 import "./ItemListContainer.css";
 
 const ItemListContainer = ({ saludo }) => {
-    const[products , setProducts] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [load, setLoad] = useState(false);
+    const { idCategory } = useParams()
 
-    const {idCategory} = useParams()
+    const getProduct = async () => {
+        const productRef = collection(db, "products")
+        const dataDb = await getDocs(productRef)
+        const data = dataDb.docs.map((productDb) => {
+            return { id: productDb.id, ...productDb.data() }
+        })
+        setProducts(data);
+    }
 
-useEffect(() => {
-    catchProducts()
-    .then((response) => {
-        if(idCategory){
+    const getProductsByCategory = async () => {
+        const productsRef = collection(db, "products");
+        const q = query(productsRef, where("category", "==", idCategory));
+        const dataDb = await getDocs(q);
+        const data = dataDb.docs.map((productDb) => {
+            return { id: productDb.id, ...productDb.data() }
+        }); 
 
-            const filterProducts = response.filter( (products) => products.category === idCategory)
-            setProducts(filterProducts)
+        setProducts(data)
+    };
+
+
+    useEffect(() => {
+
+        if (idCategory){
+            getProductsByCategory();
         }else{
-            
-            setProducts(response)
+            getProduct();
         }
-    })
-    .catch((error) => {
-        console.error(error)
-    }) 
-    .finally(() => {
-        console.log("finalizo la promesa")
-    })
-}, [idCategory]);
+
+    }, [idCategory]);
 
 
-return (
-    <div className="bodyProducts">
-        <ItemList productos={products} />
-    </div>
-)
+    return (
+        <div className="bodyProducts">
+            {load ? <BarLoader color="#a70aa7" /> : <ItemList productos={products} />}
+        </div>
+    )
 };
-
 export default ItemListContainer

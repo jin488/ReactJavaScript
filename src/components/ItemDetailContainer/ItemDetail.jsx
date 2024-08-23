@@ -1,29 +1,48 @@
-import "./itemDetail.css";
-import ProductCount from "../ItemCount/ProductCount"
-import { useContext } from "react";
-import { CartContext } from "../../context/cartContext"
+import "./ItemDetail.css";
+import { useContext, useState } from "react";
+import { CartContext } from "../../context/CartContext"
+import Count from "../ItemCount/ProductCount"
+import { Link } from "react-router-dom";
+
 
 const ItemDetail = ({ producto }) => {
     const { agregarProducto } = useContext(CartContext)
+    const [viewItemCount, setViewItemCount] = useState(true);
 
     const agregarAlCarrito = (contador) => {
-        const productoCarrito = { ...producto, cantidad: contador};
+        const productoCarrito = { ...producto, cantidad: contador };
 
         agregarProducto(productoCarrito)
-    };         
+
+        setViewItemCount(false)
+
+    };
+
 
     return (
-        <div className="item-detail">
-            <div className="image">
-                <img src={producto.imagen} alt="" />
-            </div>
-            <div className="detail">
-                <h2>{producto.nombre}</h2>
-                <p>{producto.descripcion}</p>
-                <p>Price: ${producto.precio}</p>
-                <ProductCount stock={producto.stock} agregarAlCarrito={agregarAlCarrito}/>           
+
+        <div className="itemDetail">
+            <div className="order">
+                <div className="image">
+                    <img src={producto.image} alt={producto.name} />
                 </div>
+                <div className="detail">
+                    <h2>{producto.name}</h2>
+                    <p>${producto.price}</p>
+                    {
+                        viewItemCount ? (<Count agregarAlCarrito={agregarAlCarrito} stock={producto.stock} />)
+                        : 
+                        (<Link className="goCart" to="/cart" >Go Cart →</Link>)
+                    }
+
+                </div>
+                <div className="image">
+                    <img src={producto.secondImage} alt={producto.name} />
+                </div>
+            </div>
+            <p className="description">{producto.description}</p>
         </div>
+
     );
 };
 export default ItemDetail;

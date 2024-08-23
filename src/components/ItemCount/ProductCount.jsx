@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { TiShoppingCart } from "react-icons/ti";
-import "./count.css"
+import "./Count.css"
 
-const EjemploContador = ({ agregarAlCarrito, stock }) => {
+const Count = ({ agregarAlCarrito, stock }) => {
     const [contador, setContador] = useState(1);
 
     const aumentarContador = () => {
@@ -20,7 +20,7 @@ const EjemploContador = ({ agregarAlCarrito, stock }) => {
     return (
         <div className="boxCount">
             <button className="btnCount" onClick={aumentarContador} >+</button>
-            <p className="numberCount"> {contador} </p>
+            <span className="numberCount"> {contador} </span>
             <button className="btnCount" onClick={disminuirContador}>-</button>
 
             <button className="btnAdd" onClick={() => agregarAlCarrito(contador)}>
@@ -29,4 +29,4 @@ const EjemploContador = ({ agregarAlCarrito, stock }) => {
         </div> 
     );
 };
-export default EjemploContador;
+export default Count;

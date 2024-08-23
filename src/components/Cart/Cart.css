@@ -1,0 +1,116 @@
+.cartBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartBox ul li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-top: 3px solid rgb(167, 10, 167);
+    border-bottom: 3px solid rgb(167, 10, 167);
+}
+
+.name {
+    width: 400px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cartBox ul li p {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 1px solid gainsboro;
+    border-left: 1px solid gainsboro;
+}
+
+.name:hover {
+    transition: 0.9s;
+    color: rgb(167, 10, 167);
+}
+
+
+.cartBox div {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 3px solid rgb(167, 10, 167);
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.cartBox h2 {
+    color: rgb(167, 10, 167);
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.cartBox h2:hover {
+    color: rgb(110, 4, 110);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+.delete {
+    color: white;
+    background-color: rgb(167, 10, 167);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50px;
+}
+
+.delete:hover {
+    background-color: rgb(110, 4, 110);
+}
+
+
+.emptyDelete {
+    color: white;
+    background-color: rgb(167, 10, 167);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.emptyDelete:hover {
+    background-color: rgb(110, 4, 110);
+}
+
+.theCartIsEmpty {
+    color: rgb(167, 10, 167);
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin: 50px;
+}
+
+div .backBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgb(167, 10, 167);
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+div .backBtn:hover {
+    background-color: rgb(110, 4, 110);
+} 
+

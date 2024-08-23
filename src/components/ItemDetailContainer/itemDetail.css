@@ -1,29 +1,101 @@
-.item-detail {
-    width: 100%;
-    min-height: 90vh;
+
+.itemDetail {
     display: flex;
-    padding: 50px 0;
+    flex-direction: column;
+    width: 1200px;
+    height: auto;
+    padding: 10px;
+    gap: 15px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    margin: 30px 20px 10px 75px;
 }
 
-.item-detail .image {
-    width: 50%;
+.order {
     display: flex;
+    justify-content: row;
     justify-content: center;
+    gap: 35px;
 }
 
-.item-detail .image img {
-    height: 70vh;
+.image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 300px;
 }
 
-.item-detail .detail {
-    width: 50%;
-    margin: 0 50px;
+.image img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 335px;
+    border: 1px solid rgb(110, 4, 110);
+    cursor: pointer;
+    padding: 20px;
 }
 
-.item-detail .detail h2 {
-    font-size: 40px;
+.image img:hover{
+    padding: 30px;
 }
 
-.item-detail .detail p {
-    font-size: 20px;
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    background-color: gainsboro;
+}
+
+.detail p {
+    color: rgb(167, 10, 167);
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.detail p:hover {
+    color: rgb(110, 4, 110);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.description {
+    text-align: start;
+    font-size: 25px;
+    padding: 10px;
+}
+.description:hover:hover {
+    color: rgb(167, 10, 167);
+    cursor: crosshair;
+    transition: 1s;
+}
+
+.detail h2 {
+    text-align: center;
+    border: 2px solid rgb(167, 10, 167);
+    padding: 20px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.detail h2:hover {
+    cursor: pointer;
+    color: rgb(110, 4, 110);;
+}
+
+.goCart {
+    text-decoration: none;
+    background-color: rgb(167, 10, 167);
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
 }

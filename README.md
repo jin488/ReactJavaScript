@@ -1,8 +1,15 @@
 # Ecommerce ComputeX
+<img src="./public/img/computex.png" width="130" />
+
+
 
 ##### `Dev - Juan Napoli`
 
 <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/React-Dark.svg" width="50" />
+
+
+
+
 
 ## Sobre mi proyecto
 
@@ -12,4 +19,4 @@ Su base de datos se encuentra subida en firebase como podemos ver mas abajo.
 
 ## Dependencias
 
-`react` `firebase` `react-router-dom` `react-toastify` 
+`react` `firebase` `react-router-dom` `react-toastify`

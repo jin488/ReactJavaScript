@@ -9,13 +9,13 @@ const ItemDetailContainer = () => {
     const { idProducts } = useParams()
 
     const getProduct = async () => {
-        const docRef = doc(db, 'products', idProducts);
-        const dataDb = await getDoc(docRef);
-        const data = { id: dataDb.id, ...dataDb.data() };
-
-
-        setProducts(data);
-    }
+        try {
+            const docRef = doc(db, 'products', idProducts);
+            const dataDb = await getDoc(docRef);
+            const data = { id: dataDb.id, ...dataDb.data() };
+            setProducts(data);
+        } catch (error) {}
+    };
 
     useEffect(() => {
         getProduct();

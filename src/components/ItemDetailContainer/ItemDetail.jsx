@@ -20,29 +20,29 @@ const ItemDetail = ({ producto }) => {
 
 
     return (
+        <div className="centerItemDetail">
+            <div className="itemDetail">
+                <div className="order">
+                    <div className="image">
+                        <img src={producto.image} alt={producto.name} />
+                    </div>
+                    <div className="detail">
+                        <h2>{producto.name}</h2>
+                        <p>${producto.price}</p>
+                        {
+                            viewItemCount ? (<Count agregarAlCarrito={agregarAlCarrito} stock={producto.stock} />)
+                                :
+                                (<Link className="goCart" to="/cart" >Go Cart →</Link>)
+                        }
 
-        <div className="itemDetail">
-            <div className="order">
-                <div className="image">
-                    <img src={producto.image} alt={producto.name} />
+                    </div>
+                    <div className="image">
+                        <img src={producto.secondImage} alt={producto.name} />
+                    </div>
                 </div>
-                <div className="detail">
-                    <h2>{producto.name}</h2>
-                    <p>${producto.price}</p>
-                    {
-                        viewItemCount ? (<Count agregarAlCarrito={agregarAlCarrito} stock={producto.stock} />)
-                        : 
-                        (<Link className="goCart" to="/cart" >Go Cart →</Link>)
-                    }
-
-                </div>
-                <div className="image">
-                    <img src={producto.secondImage} alt={producto.name} />
-                </div>
+                <p className="description">{producto.description}</p>
             </div>
-            <p className="description">{producto.description}</p>
         </div>
-
     );
 };
 export default ItemDetail;

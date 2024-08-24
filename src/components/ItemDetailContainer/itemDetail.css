@@ -1,3 +1,9 @@
+.centerItemDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .itemDetail {
     display: flex;
@@ -9,7 +15,7 @@
     border: 2px solid gray;
     border-radius: 5px;
     text-align: center;
-    margin: 30px 20px 10px 75px;
+    margin-top: 30px;
 }
 
 .order {

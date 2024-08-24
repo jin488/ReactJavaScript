@@ -36,6 +36,7 @@ const Cart = () => {
             <div>
                 <h2>Total price: $ {totalPrice()}</h2>
                 <button className="emptyDelete" onClick={emptyCart}>All <FaRegTrashAlt /></button>
+                <Link to="/checkout" className="emptyDelete">Continue Buy</Link>
             </div>
         </div>
     )

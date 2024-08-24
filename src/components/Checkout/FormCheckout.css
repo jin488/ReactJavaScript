@@ -1,0 +1,65 @@
+.boxForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    padding: 20px;
+    border: 2px solid gainsboro;
+    height: auto;
+}
+
+.boxForm form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(110, 4, 110);
+    color: white;
+    border: 3px solid rgb(167, 10, 167);
+    border-radius: 20px;
+    padding: 20px;
+    width: 700px;
+    height: 450px;
+    font-weight: bold;
+}
+
+.boxForm form:hover {
+    border: 3px solid black;
+}
+
+
+.boxForm form input{
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: gainsboro;
+    width: 500px;
+    padding: 10px;
+}
+
+.sendOrder {
+    color: white;
+    background-color: rgb(167, 10, 167);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.sendOrder:hover {
+    background-color: rgb(110, 4, 110);
+    outline: 2px solid white;
+} 
+
+.orderComplete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    gap: 30px;
+    color: rgb(167, 10, 167);
+}

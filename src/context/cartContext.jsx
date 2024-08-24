@@ -8,7 +8,6 @@ const CartProvider = ({ children }) => {
     const agregarProducto = (newProduct) => {
         const condition = estaEnElCarrito(newProduct.id)
         if (condition) {
-            //Sumar cantidades
             const newCart = carrito.map((productCart) => {
                 if (productCart.id === newProduct.id) {
                     return { ...productCart, cantidad: productCart.cantidad + newProduct.cantidad }
@@ -17,18 +16,9 @@ const CartProvider = ({ children }) => {
                 }
             })
 
-            /*
-            let nuevoCarrito = [...carrito]
-                nuevoCarrito.forEach((productoCarrito)=>{
-                    if(productoCarrito.id === productoNuevo.id){
-                        productoCarrito.cantidad = productoCarrito.cantidad + productoNuevo.cantidad
-                    }
-                })
-            */
-
             setCarrito(newCart)
-        }else {
-            setCarrito([ ...carrito, newProduct])
+        } else {
+            setCarrito([...carrito, newProduct])
         }
     }
 

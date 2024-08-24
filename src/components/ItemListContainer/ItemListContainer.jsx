@@ -20,6 +20,7 @@ const ItemListContainer = ({ saludo }) => {
                 return { id: productDb.id, ...productDb.data() }
             })
             setProducts(data);
+            setLoad(false)
         } catch (error) { }
     }
 
@@ -33,12 +34,13 @@ const ItemListContainer = ({ saludo }) => {
             });
 
             setProducts(data)
+            setLoad(false)
         } catch (error) { }
     };
 
 
     useEffect(() => {
-
+        setLoad(true)
         if (idCategory) {
             getProductsByCategory();
         } else {

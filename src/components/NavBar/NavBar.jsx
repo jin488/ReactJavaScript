@@ -1,5 +1,5 @@
 import CartWidget from "./CartWidget"
-import "./navbar.css"
+import "./Navbar.css"
 import { Link } from "react-router-dom";
 import { FaComputer } from "react-icons/fa6";
 import { MdSupportAgent } from "react-icons/md";
